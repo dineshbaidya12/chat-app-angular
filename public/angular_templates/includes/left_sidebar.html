@@ -1,0 +1,310 @@
+<!-- <div> -->
+<!-- START [PART - 001] -->
+<div class="left-top-bar">
+    <div class="search-input-div" ng-click="stop_proprgation($event)" id="search-input-div"
+        ng-class="{'show-search': is_show_search}">
+        <div class="parent-search-cover" id="parent-search-cover">
+            <input type="text" placeholder='Type name, Username' id="search_username" ng-model="search_username"
+                class="search" ng-click="stop_proprgation($event)">
+            <label uib-tooltip="Close" tooltip-placement="bottom" for="search_username" class="cross"
+                ng-click="search_username=''; closeSearch()">
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+        </div>
+    </div>
+
+    <div class="logo">
+        <img src="{{img_assets_url}}{{user_details.theme}}-logo.png">
+    </div>
+    <div class="options">
+        <div class="theme" ng-show="user_details.theme=='dark'" ng-click="turn_light_mode()" tooltip-placement="bottom"
+            uib-tooltip="Change to Light Mode">
+            <i class="fa-solid fa-sun"></i>
+        </div>
+        <div class="theme" ng-show="user_details.theme=='light'" ng-click="turn_dark_mode()"
+            uib-tooltip="Change to Dark Mode" tooltip-placement="bottom">
+            <i class="fa-solid fa-moon"></i>
+        </div>
+        <label for="search_username" class="search" ng-click="openSearchBar($event)">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </label>
+        <div class="more-options">
+            <i class="fa-solid fa-ellipsis-vertical" ng-click="show_more_options($event)"></i>
+            <div class="m-options" ng-class="{'show' : is_show_more_option}">
+                <ul>
+                    <li>
+                        <a href="{{base_url}}chat#/view_profile">View profile</a>
+                    </li>
+                    <li>
+                        <a href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="chats-heading-div">
+    <p class="chats-heading">
+        <i class="fa-solid fa-comments"></i>
+        <span>
+            Chats
+        </span>
+    </p>
+</div>
+<!-- END [PART - 001] -->
+
+<!-- START [PART - 002] -->
+
+<div class="chats-parent-div" id="chats-parent-div">
+    <div id="added-request-parent" class="d-flex">
+        <a href="chat#/home" id="added-parent" class="d-flex align-items-center tabs"
+            ng-class="{'active' : route_name == 'home'}">
+            <span>Added</span>
+            <span class="show_number" ng-hide="1">1</span>
+        </a>
+        <a href="chat#/requested" id="request-parent" class="d-flex align-items-center tabs"
+            ng-class="{'active' : route_name == 'requested'}">
+            <span>Requested</span>
+            <span class="show_number" ng-hide="1">9+</span>
+        </a>
+    </div>
+
+    <div id="connections-parent-div" class="pt-2">
+
+        <div id="add-friend-div" class="">
+            <i class="fa-solid fa-user-plus"></i>
+        </div>
+
+        <div class="all-connections">
+
+            <div id="connection_1" class="connection d-flex position-relative">
+                <span class="show_number connection-unread">9+</span>
+                <div class="profile_picture_div">
+                    <img src="{{base_url}}assets/images/default-avatar.jpg" alt="Testing Web">
+                </div>
+                <div class="user_details_div">
+                    <span class="username">Testing Web</span>
+                    <span class="last-msg-dtls d-flex">
+                        <span class="msg-status-span d-flex">
+                            <img src="{{base_url}}assets/images/double-tick-{{user_details.theme}}.png">
+                        </span>
+                        <p class="last-msg">Hii</p>
+                    </span>
+                </div>
+            </div>
+
+            <div id="connection_1" class="connection d-flex position-relative">
+                <span class="show_number connection-unread">7</span>
+                <div class="profile_picture_div">
+                    <img src="{{base_url}}assets/images/default-avatar.jpg" alt="Testing Web">
+                </div>
+                <div class="user_details_div">
+                    <span class="username">Lorem ipsum doller si</span>
+                    <span class="last-msg-dtls d-flex">
+                        <span class="msg-status-span d-flex">
+                            <img src="{{base_url}}assets/images/single-tick-{{user_details.theme}}.png">
+                        </span>
+                        <p class="last-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni eveniet quam
+                            ad? Distinctio hic quia natus, aut vitae accusantium, laborum eligendi mollitia sunt animi
+                            quas quod, corrupti molestias veniam libero?</p>
+                    </span>
+                </div>
+            </div>
+
+            <div id="connection_1" class="connection d-flex position-relative">
+                <div class="profile_picture_div">
+                    <img src="{{base_url}}assets/images/default-avatar.jpg" alt="Testing Web">
+                </div>
+                <div class="user_details_div">
+                    <span class="username">amet consectetur adipisicing elit</span>
+                    <span class="last-msg-dtls d-flex">
+                        <span class="msg-status-span d-flex">
+                            <img src="{{base_url}}assets/images/double-tick-{{user_details.theme}}.png">
+                        </span>
+                        <p class="last-msg">cupiditate voluptatum inventore quo repellendus ipsum, reprehenderit libero
+                            quae ipsa accusamus. Sint ad neque magni saepe!</p>
+                    </span>
+                </div>
+            </div>
+
+            <div id="connection_1" class="connection d-flex position-relative">
+                <span class="show_number connection-unread">6</span>
+                <div class="profile_picture_div">
+                    <img src="{{base_url}}assets/images/default-avatar.jpg" alt="Testing Web">
+                </div>
+                <div class="user_details_div">
+                    <span class="username">Testing Web 2</span>
+                    <span class="last-msg-dtls d-flex">
+                        <span class="msg-status-span d-flex">
+                            <img src="{{base_url}}assets/images/blocked-{{user_details.theme}}.png">
+                        </span>
+                        <p class="last-msg">
+                            <span>
+                                <em>This Message was Deleted</em>
+                            </span>
+                        </p>
+                    </span>
+                </div>
+            </div>
+
+            <div id="connection_1" class="connection d-flex position-relative">
+                <div class="profile_picture_div">
+                    <img src="{{base_url}}assets/images/default-avatar.jpg" alt="Testing Web">
+                </div>
+                <div class="user_details_div">
+                    <span class="username">Testing Web 2</span>
+                    <span class="last-msg-dtls d-flex">
+                        <span class="msg-status-span d-flex">
+                            <img src="{{base_url}}assets/images/double-tick-{{user_details.theme}}.png">
+                        </span>
+                        <p class="last-msg">Testing web this side</p>
+                    </span>
+                </div>
+            </div>
+
+            <div id="connection_1" class="connection d-flex position-relative">
+                <div class="profile_picture_div">
+                    <img src="{{base_url}}assets/images/default-avatar.jpg" alt="Testing Web">
+                </div>
+                <div class="user_details_div">
+                    <span class="username">Testing Web 2</span>
+                    <span class="last-msg-dtls d-flex">
+                        <span class="msg-status-span d-flex">
+                            <img src="{{base_url}}assets/images/clock-{{user_details.theme}}.png">
+                        </span>
+                        <p class="last-msg">Testing web this side</p>
+                    </span>
+                </div>
+            </div>
+
+            <div id="connection_1" class="connection d-flex position-relative">
+                <span class="show_number connection-unread">4</span>
+                <div class="profile_picture_div">
+                    <img src="{{base_url}}assets/images/default-avatar.jpg" alt="Testing Web">
+                </div>
+                <div class="user_details_div">
+                    <span class="username">Testing Web 2</span>
+                    <span class="last-msg-dtls d-flex">
+                        <span class="msg-status-span d-flex">
+                            <img src="{{base_url}}assets/images/double-tick-{{user_details.theme}}.png">
+                        </span>
+                        <p class="last-msg">Testing web this side</p>
+                    </span>
+                </div>
+            </div>
+
+            <div id="connection_1" class="connection d-flex position-relative">
+                <div class="profile_picture_div">
+                    <img src="{{base_url}}assets/images/default-avatar.jpg" alt="Testing Web">
+                </div>
+                <div class="user_details_div">
+                    <span class="username">Testing Web 2</span>
+                    <span class="last-msg-dtls d-flex">
+                        <span class="msg-status-span d-flex">
+                            <img src="{{base_url}}assets/images/double-tick-{{user_details.theme}}.png">
+                        </span>
+                        <p class="last-msg">Testing web this side</p>
+                    </span>
+                </div>
+            </div>
+
+            <div id="connection_1" class="connection d-flex position-relative">
+                <div class="profile_picture_div">
+                    <img src="{{base_url}}assets/images/default-avatar.jpg" alt="Testing Web">
+                </div>
+                <div class="user_details_div">
+                    <span class="username">Testing Web 2</span>
+                    <span class="last-msg-dtls d-flex">
+                        <span class="msg-status-span d-flex">
+                            <img src="{{base_url}}assets/images/double-tick-{{user_details.theme}}.png">
+                        </span>
+                        <p class="last-msg">Testing web this side</p>
+                    </span>
+                </div>
+            </div>
+
+            <div id="connection_1" class="connection d-flex position-relative">
+                <div class="profile_picture_div">
+                    <img src="{{base_url}}assets/images/default-avatar.jpg" alt="Testing Web">
+                </div>
+                <div class="user_details_div">
+                    <span class="username">Testing Web 2</span>
+                    <span class="last-msg-dtls d-flex">
+                        <span class="msg-status-span d-flex">
+                            <img src="{{base_url}}assets/images/double-tick-{{user_details.theme}}.png">
+                        </span>
+                        <p class="last-msg">Testing web this side</p>
+                    </span>
+                </div>
+            </div>
+
+            <div id="connection_1" class="connection d-flex position-relative">
+                <div class="profile_picture_div">
+                    <img src="{{base_url}}assets/images/default-avatar.jpg" alt="Testing Web">
+                </div>
+                <div class="user_details_div">
+                    <span class="username">Testing Web 2</span>
+                    <span class="last-msg-dtls d-flex">
+                        <span class="msg-status-span d-flex">
+                            <img src="{{base_url}}assets/images/double-tick-{{user_details.theme}}.png">
+                        </span>
+                        <p class="last-msg">Testing web this side</p>
+                    </span>
+                </div>
+            </div>
+
+            <div id="connection_1" class="connection d-flex position-relative">
+                <div class="profile_picture_div">
+                    <img src="{{base_url}}assets/images/default-avatar.jpg" alt="Testing Web">
+                </div>
+                <div class="user_details_div">
+                    <span class="username">Testing Web 2</span>
+                    <span class="last-msg-dtls d-flex">
+                        <span class="msg-status-span d-flex">
+                            <img src="{{base_url}}assets/images/double-tick-{{user_details.theme}}.png">
+                        </span>
+                        <p class="last-msg">Testing web this side</p>
+                    </span>
+                </div>
+            </div>
+
+            <div id="connection_1" class="connection d-flex position-relative">
+                <div class="profile_picture_div">
+                    <img src="{{base_url}}assets/images/default-avatar.jpg" alt="Testing Web">
+                </div>
+                <div class="user_details_div">
+                    <span class="username">Testing Web 2</span>
+                    <span class="last-msg-dtls d-flex">
+                        <span class="msg-status-span d-flex">
+                            <img src="{{base_url}}assets/images/double-tick-{{user_details.theme}}.png">
+                        </span>
+                        <p class="last-msg">Testing web this side</p>
+                    </span>
+                </div>
+            </div>
+
+            <div id="connection_1" class="connection d-flex position-relative">
+                <div class="profile_picture_div">
+                    <img src="{{base_url}}assets/images/default-avatar.jpg" alt="Testing Web">
+                </div>
+                <div class="user_details_div">
+                    <span class="username">Testing Web 2</span>
+                    <span class="last-msg-dtls d-flex">
+                        <span class="msg-status-span d-flex">
+                            <img src="{{base_url}}assets/images/double-tick-{{user_details.theme}}.png">
+                        </span>
+                        <p class="last-msg">Testing web this side</p>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- END [PART - 002] -->
+
+<!-- </div> -->
